@@ -1,4 +1,4 @@
-import { GET_CURRENCY, SUCCESS_API_CURRENCY, ADD_EXPENSE } from '../actions';
+import { GET_CURRENCY, SUCCESS_API_CURRENCY, ADD_EXPENSE, DEL_EXPENSE } from '../actions';
 
 const INITIAL_STATE = {
   currencies: [], // array de string
@@ -26,6 +26,12 @@ const wallet = (state = INITIAL_STATE, action) => {
       ...state,
       expenses: [...state.expenses,
         { ...action.expense, id: state.expenses.length }],
+      isFetching: false,
+    };
+  case DEL_EXPENSE:
+    return {
+      ...state,
+      expenses: state.expenses.filter((expense) => expense.id !== action.id),
       isFetching: false,
     };
   default:

@@ -2,6 +2,7 @@ export const LOGIN = 'LOGIN';
 export const GET_CURRENCY = 'GET_CURRENCY';
 export const SUCCESS_API_CURRENCY = 'SUCCESS_API_CURRENCY';
 export const ADD_EXPENSE = 'ADD_EXPENSE';
+export const DEL_EXPENSE = 'DEL_EXPENSE';
 
 const urlApi = 'https://economia.awesomeapi.com.br/json/all';
 
@@ -30,6 +31,11 @@ export const fetchCurrency = () => async (dispatch) => {
 const addExpense = (expense) => ({
   type: ADD_EXPENSE,
   expense,
+});
+
+export const delExpense = (id) => ({
+  type: DEL_EXPENSE,
+  id,
 });
 
 export const fetchAddExpense = (expense) => async (dispatch) => {
