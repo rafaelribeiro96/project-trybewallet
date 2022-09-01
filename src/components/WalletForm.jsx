@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import { fetchCurrency } from '../redux/actions';
+import { fetchCurrency, fetchAddExpense } from '../redux/actions';
 
 class WalletForm extends Component {
   state = {
     value: '',
-    currency: '',
-    method: '',
-    tag: '',
+    currency: 'USD',
+    method: 'Dinheiro',
+    tag: 'Alimentação',
     description: '',
   };
 
@@ -22,12 +22,25 @@ class WalletForm extends Component {
     this.setState({ [name]: value });
   };
 
+  onSubmitForm = (event) => {
+    event.preventDefault();
+    const { dispatch } = this.props;
+    dispatch(fetchAddExpense(this.state));
+    this.setState({
+      value: '',
+      currency: 'USD',
+      method: 'Dinheiro',
+      tag: 'Alimentação',
+      description: '',
+    });
+  };
+
   render() {
     const { value, currency, method, tag, description } = this.state;
     const { currencies } = this.props;
     return (
       <div>
-        <form action="">
+        <form onSubmit={ this.onSubmitForm }>
 
           <label htmlFor="value-input">
             Valor:
@@ -70,31 +83,32 @@ class WalletForm extends Component {
 
           <select
             name="method"
-            id=""
+            id="method-input"
             value={ method }
             data-testid="method-input"
             onChange={ this.handleInputChange }
           >
-            <option value="dinheiro">Dinheiro</option>
-            <option value="credito">Cartão de crédito</option>
-            <option value="debito">Cartão de débito</option>
+            <option value="Dinheiro">Dinheiro</option>
+            <option value="Cartão de crédito">Cartão de crédito</option>
+            <option value="Cartão de débito">Cartão de débito</option>
 
           </select>
 
           <select
-            name=""
+            name="tag"
             id="tag-input"
             value={ tag }
             data-testid="tag-input"
             onChange={ this.handleInputChange }
           >
-            <option value="alimentacao">Alimentação</option>
-            <option value="lazer">Lazer</option>
-            <option value="trabalho">Trabalho</option>
-            <option value="transporte">Transporte</option>
-            <option value="saude">Saúde</option>
-
+            <option value="Alimentação">Alimentação</option>
+            <option value="Lazer">Lazer</option>
+            <option value="Trabalho">Trabalho</option>
+            <option value="Transporte">Transporte</option>
+            <option value="Saúde">Saúde</option>
           </select>
+
+          <button type="submit">Adicionar despesa</button>
         </form>
       </div>
     );
