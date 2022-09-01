@@ -1,4 +1,11 @@
-import { GET_CURRENCY, SUCCESS_API_CURRENCY, ADD_EXPENSE, DEL_EXPENSE } from '../actions';
+import {
+  GET_CURRENCY,
+  SUCCESS_API_CURRENCY,
+  ADD_EXPENSE,
+  DEL_EXPENSE,
+  EDIT_EXPENSE,
+  COMPLETE_EDIT,
+} from '../actions';
 
 const INITIAL_STATE = {
   currencies: [], // array de string
@@ -6,6 +13,17 @@ const INITIAL_STATE = {
   editor: false, // valor booleano que indica de uma despesa está sendo editada
   idToEdit: 0, // valor numérico que armazena o id da despesa que esta sendo editada
   isFetching: false,
+  editing: false,
+};
+
+const filterEdit = (state, action) => {
+  const { expenses, idToEdit } = state;
+  const expenseEdited = expenses.filter((expense) => expense.id === idToEdit);
+  const editingExpense = expenses.filter((expense) => expense.id !== idToEdit);
+  const [expensiveToArrayEdited] = expenseEdited;
+  const newEditExpense = { ...expensiveToArrayEdited, ...action.expense };
+  editingExpense.splice(idToEdit, 0, newEditExpense);
+  return editingExpense;
 };
 
 const wallet = (state = INITIAL_STATE, action) => {
@@ -33,6 +51,19 @@ const wallet = (state = INITIAL_STATE, action) => {
       ...state,
       expenses: state.expenses.filter((expense) => expense.id !== action.id),
       isFetching: false,
+    };
+  case EDIT_EXPENSE:
+    return {
+      ...state,
+      idToEdit: action.id,
+      editing: true,
+    };
+
+  case COMPLETE_EDIT:
+    return {
+      ...state,
+      editing: false,
+      expenses: filterEdit(state, action),
     };
   default:
     return state;

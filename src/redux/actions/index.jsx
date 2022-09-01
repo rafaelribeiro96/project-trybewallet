@@ -3,6 +3,8 @@ export const GET_CURRENCY = 'GET_CURRENCY';
 export const SUCCESS_API_CURRENCY = 'SUCCESS_API_CURRENCY';
 export const ADD_EXPENSE = 'ADD_EXPENSE';
 export const DEL_EXPENSE = 'DEL_EXPENSE';
+export const EDIT_EXPENSE = 'EDIT_EXPENSE';
+export const COMPLETE_EDIT = 'COMPLETE_EDIT';
 
 const urlApi = 'https://economia.awesomeapi.com.br/json/all';
 
@@ -36,6 +38,16 @@ const addExpense = (expense) => ({
 export const delExpense = (id) => ({
   type: DEL_EXPENSE,
   id,
+});
+
+export const editExpense = (id) => ({
+  type: EDIT_EXPENSE,
+  id,
+});
+
+export const completeEdit = (expense) => ({
+  type: COMPLETE_EDIT,
+  expense,
 });
 
 export const fetchAddExpense = (expense) => async (dispatch) => {
