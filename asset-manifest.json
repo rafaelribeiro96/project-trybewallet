@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/project-trybewallet/static/css/main.41957326.css",
+    "main.js": "/project-trybewallet/static/js/main.07ee4183.js",
+    "index.html": "/project-trybewallet/index.html",
+    "main.41957326.css.map": "/project-trybewallet/static/css/main.41957326.css.map",
+    "main.07ee4183.js.map": "/project-trybewallet/static/js/main.07ee4183.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.41957326.css",
+    "static/js/main.07ee4183.js"
+  ]
+}
