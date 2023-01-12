@@ -14,10 +14,16 @@ class Header extends Component {
   render() {
     const { email, expenses } = this.props;
     return (
-      <header>
-        <div data-testid="email-field">{ email }</div>
-        <div data-testid="total-field">{ this.expensesTotal(expenses).toFixed(2) }</div>
-        <div data-testid="header-currency-field">BRL</div>
+      <header className="header-component App-header">
+        <div className="email-header" data-testid="email-field">{ email }</div>
+        <div
+          className="total-header"
+          data-testid="total-field"
+        >
+          { this.expensesTotal(expenses).toFixed(2) }
+
+        </div>
+        <div className="currency-header" data-testid="header-currency-field">BRL</div>
       </header>
     );
   }

@@ -40,11 +40,12 @@ class EditForm extends Component {
     const { currencies } = this.props;
     return (
       <div>
-        <form onSubmit={ this.onSubmitForm }>
+        <form className="form-wallet-form" onSubmit={ this.onSubmitForm }>
 
-          <label htmlFor="value-input">
+          <label htmlFor="value-input" className="label-value">
             Valor:
             <input
+              className="form-value"
               type="number"
               name="value"
               id="value-input"
@@ -54,9 +55,10 @@ class EditForm extends Component {
             />
           </label>
 
-          <label htmlFor="description-input">
+          <label htmlFor="description-input" className="label-description">
             Descrição:
             <input
+              className="form-description"
               type="text"
               name="description"
               id="description-input"
@@ -66,9 +68,10 @@ class EditForm extends Component {
             />
           </label>
 
-          <label htmlFor="currency-input">
+          <label htmlFor="currency-input" className="label-select-currency">
             Moeda:
             <select
+              className="select-currency"
               name="currency"
               id="currency-input"
               value={ currency }
@@ -82,6 +85,7 @@ class EditForm extends Component {
           </label>
 
           <select
+            className="select-method"
             name="method"
             id="method-input"
             value={ method }
@@ -95,6 +99,7 @@ class EditForm extends Component {
           </select>
 
           <select
+            className="select-tag"
             name="tag"
             id="tag-input"
             value={ tag }
@@ -108,7 +113,7 @@ class EditForm extends Component {
             <option value="Saúde">Saúde</option>
           </select>
 
-          <button type="submit">Editar despesa</button>
+          <button type="submit" className="button-add-despesa">Editar despesa</button>
         </form>
       </div>
     );

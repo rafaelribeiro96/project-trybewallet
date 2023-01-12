@@ -1,0 +1,47 @@
+.form-login {
+  align-items: center;
+  background-color: #f2f2f2;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  padding: 2rem;
+  width: 50%;
+}
+
+.h2login {
+  margin-bottom: 1rem;
+}
+
+.input-login {
+  border: none;
+  border-radius: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.email-login {
+  border-bottom: 1px solid #ccc;
+}
+
+.password-login {
+  border-bottom: 1px solid #ccc;
+}
+
+.button-login {
+  background-color: #4caf50;
+  border: none;
+  border-radius: 0.5rem;
+  color: white;
+  cursor: pointer;
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+.button-login[ disabled ] {
+  background-color: gray;
+  cursor: not-allowed;
+}

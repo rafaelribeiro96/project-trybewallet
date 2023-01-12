@@ -1,0 +1,48 @@
+.table-component {
+  border-collapse: collapse;
+  margin-top: 2rem;
+  min-width: 320px;
+  width: 100%;
+}
+
+.table-component th , td {
+  border-bottom: 1px solid #ddd;
+  padding: 1rem;
+  text-align: left;
+}
+
+.table-component th {
+  background-color: #f2f2f2;
+}
+
+.button-table-editar {
+  background-color: transparent;
+  border: none;
+  color: blue;
+  cursor: pointer;
+}
+
+.button-table-editar:hover {
+  text-decoration: underline;
+}
+
+.button-table-excluir {
+  background-color: transparent;
+  border: none;
+  color: red;
+  cursor: pointer;
+}
+
+.button-table-excluir:hover {
+  text-decoration: underline;
+}
+
+
+@media screen and ( max-width : 1050px ) {
+
+  .table-component {
+    display: block;
+    overflow-x: auto;
+  }
+}
+
