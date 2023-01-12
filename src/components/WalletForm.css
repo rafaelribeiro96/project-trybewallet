@@ -3,6 +3,12 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.form-wallet-and-edit {
+  margin-top: 20px;
 }
 
 .label-value , .label-description , .label-select-currency {

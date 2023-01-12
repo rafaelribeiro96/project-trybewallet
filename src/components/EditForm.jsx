@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { completeEdit } from '../redux/actions';
+import './EditForm.css';
 
 class EditForm extends Component {
   state = {
@@ -39,8 +40,8 @@ class EditForm extends Component {
     const { value, currency, method, tag, description } = this.state;
     const { currencies } = this.props;
     return (
-      <div>
-        <form className="form-wallet-form" onSubmit={ this.onSubmitForm }>
+      <div className="form-wallet-and-edit">
+        <form className="form-wallet-form-edit" onSubmit={ this.onSubmitForm }>
 
           <label htmlFor="value-input" className="label-value">
             Valor:
@@ -113,7 +114,7 @@ class EditForm extends Component {
             <option value="Saúde">Saúde</option>
           </select>
 
-          <button type="submit" className="button-add-despesa">Editar despesa</button>
+          <button type="submit" className="button-edita-despesa">Editar despesa</button>
         </form>
       </div>
     );

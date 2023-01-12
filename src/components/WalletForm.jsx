@@ -40,7 +40,7 @@ class WalletForm extends Component {
     const { value, currency, method, tag, description } = this.state;
     const { currencies } = this.props;
     return (
-      <div>
+      <div className="form-wallet-and-edit">
         <form className="form-wallet-form" onSubmit={ this.onSubmitForm }>
 
           <label htmlFor="value-input" className="label-value">

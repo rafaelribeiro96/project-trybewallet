@@ -1,0 +1,21 @@
+.form-wallet-form-edit {
+  align-items: center;
+  background-color: #5575b9;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-bottom: 10px;
+  padding-top: 10px;
+}
+
+.button-edita-despesa {
+
+  /* background-color: #4caf50; */
+  background-color: #354a77;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  height: 30px;
+  margin-left: 10px;
+  width: 150px;
+}
