@@ -88,51 +88,11 @@ Neste projeto, trabalhamos as seguintes habilidades:
   }
 ```
 
-  É importante respeitar esse formato para que o avaliador funcione corretamente. Você pode adicionar novos campos ao seu estado global, mas essa estrutura básica deve se manter. Por exemplo, você pode adicionar uma propriedade `isFetching` no seu estado. Mas você **não** pode salvar as despesas em uma chave diferente de `wallet.expenses`.
-
-  Para que os testes consigam acessar a `store` do redux e realizar os testes, é necessário adicionar o seguinte bloco de código ao arquivo da `store`:
-
-  ```javascript
-  if (window.Cypress) {
-    window.store = store;
-  }
-  ```
-
-  **Observações Importantes:**
-
-  - **Se atente ao utilizar o connect do redux em seus componentes**, os componentes Header, Table e WalletForm já constam com um export default diretamente na classe, porém para que o connect funcione você deverá mover o export para outra linha. Ex:
-  ```
-  // [...] definição do componente
-  
-  export default connect(mapStateToProps, mapDispatchToProps)(Header)
-  ```
-  - Devido a estrutura que o avaliador utiliza para realizar os testes, é necessário que o seu Redux esteja configurado, ou seja, a store e os reducers estejam criados e conectados.
-
-  <br />
-  <details><summary><b> :bulb: Configurando o Redux DevTools</b></summary>
-
-  Para usarmos o Redux DevTools com o Redux-Thunk, vamos utilizar uma biblioteca chamada `redux-devtools-extension` que possui a função `composeWithDevTools`. Ela já está no package.json, a única coisa que você vai precisar fazer é configurar a sua store, por exemplo:
-
-  ```javascript
-  import { createStore, applyMiddleware } from 'redux';
-  import { composeWithDevTools } from 'redux-devtools-extension';
-  import thunk from 'redux-thunk';
-  import reducer from '../reducers';
-
-  const store = createStore(
-    reducer,
-    composeWithDevTools(
-      applyMiddleware(thunk),
-    ),
-  );
-
-  export default store;
-  ```
-  </details>
+ 
 
   <details><summary><b> :bulb: Documentação da API de Cotações de Moedas</b></summary>
 
-  Sua página _web_ irá consumir os dados da API do _awesomeapi API de Cotações_ para realizar a busca de câmbio de moedas. Para realizar essas buscas, vocês precisarão consultar o seguinte _endpoint_:
+ A _web_ irá consumir os dados da API do _awesomeapi API de Cotações_ para realizar a busca de câmbio de moedas. Para realizar essas buscas, foi preciso consultar o seguinte _endpoint_:
 
   - <https://economia.awesomeapi.com.br/json/all>
 
@@ -164,29 +124,8 @@ Neste projeto, trabalhamos as seguintes habilidades:
 
 </details>
 
-<details>
-  <summary><strong>🗣 Nos dê feedbacks sobre o projeto!</strong></summary><br />
-
-Ao finalizar e submeter o projeto, não se esqueça de avaliar sua experiência preenchendo o formulário. 
-**Leva menos de 3 minutos!**
-
-[FORMULÁRIO DE AVALIAÇÃO DE PROJETO](https://be-trybe.typeform.com/to/ZTeR4IbH)
-
-</details>
-
-<details>
-  <summary><strong>🗂 Compartilhe seu portfólio!</strong></summary><br />
-
-  Você sabia que o LinkedIn é a principal rede social profissional e compartilhar o seu aprendizado lá é muito importante para quem deseja construir uma carreira de sucesso? Compartilhe esse projeto no seu LinkedIn, marque o perfil da Trybe (@trybe) e mostre para a sua rede toda a sua evolução.
-</details>
 
 # Requisitos
-
-:warning: **PULL REQUESTS COM ISSUES DE LINTER NÃO SERÃO AVALIADAS.** :warning:
-
-:warning: Os gifs são meramente ilustrativos para visualizar o fluxo da aplicação, os nomes devem seguir os requisitos e não o gif. :warning:
-
----
 
 ## Página de Login
 
