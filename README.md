@@ -31,43 +31,6 @@ Neste projeto, trabalhamos as seguintes habilidades:
 - Criar _actions_ assíncronas na sua aplicação React que faz uso de Redux.
 </details>
 
-<a name="testes"></a>
-
-<details>
-  <summary><strong>🛠 Testes</strong></summary><br />
-
-* <details><summary><b> Execução de testes de requisito</b></summary>
-
-  Os testes deste projeto foram feitos utilizando o [Cypress](https://www.cypress.io/how-it-works/). É utilizada nos testes a resolução `1366 x 768` (1366 pixels de largura por 768 pixels de altura) para testes de layout. Logo, recomenda-se desenvolver seu projeto usando a mesma resolução, via instalação [deste plugin](https://chrome.google.com/webstore/detail/window-resizer/kkelicaakdanhinjdeammmilcgefonfh?hl=en) do `Chrome` para facilitar a configuração dessa resolução, por exemplo.
-
-  Para o projeto ser validado, todos os testes de comportamento devem passar. É possível testar isso local rodando `npm run cy`. Esse comando roda a suite de testes do Cypress que valida se o fluxo geral e os requisitos funcionais estão funcionando como deveriam. Você pode também executar o comando `npm run cy:open` para ter um resultado visual dos testes executados.
-
-  Esses testes não consideram o layout de maneira geral, mas sim os atributos e informações corretas, então preste atenção nisso! Os testes te darão uma mensagem de erro caso não estejam passando (seja qual for o motivo). 😉
-
-  **Atenção:** Sua aplicação deve estar rodando para o Cypress no terminal poder testar.
-  </details>
-
-* <details><summary><b> Execução de um teste específico</b></summary>
-
-  Para executar somente uma `spec` de testes, você pode ou rodar somente um arquivo de teste com o comando `npm run cy -- --spec cypress/integration/nomeDoArquivo_spec.js`, ou também pode selecionar qual delas você deseja após executar o comando `npm run cy:open`.
-
-  ![image](./imgs/cypress-specs.png)
-
-  Além disso ainda é possível rodar apenas um trecho de um `spec`, basta utilizar a função .only após o `describe`, `it` ou `test`. Com isso, será possível que apenas parte de um teste rode localmente e seja avaliado.
-
-  ![image](./imgs/itOnly.png)
-
-  </details>
-
-* <details><summary><b> Execução de teste de cobertura</b></summary>
-
-  Alguns requisitos irão pedir para que você desenvolva testes para sua aplicação. Esses testes serão avaliados através da cobertura de testes.
-
-  É possível verificar o percentual da cobertura de testes com o comando `npm run test-coverage`. 
-
-  Você também pode executar `npm run test-coverage -- --collectCoverageFrom=caminho/da/Pagina` para verificar o percentual de cobertura de testes de cada 'Pagina'. Por exemplo, para verificar a cobertura de testes da página de `Login`, execute o comando `npm run test-coverage -- --collectCoverageFrom=src/pages/Login.js`.
-  </details><br />
-</details>
 
 <details>
   <summary><strong id="como-desenvolver">:convenience_store: Desenvolvimento </strong></summary><br />
